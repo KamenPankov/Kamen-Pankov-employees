@@ -24,17 +24,12 @@ namespace WindowsFormsApp
                 StringReader stringReader = new StringReader(result);
 
                 string line;
-                int row = 0;
+                
                 while ((line = stringReader.ReadLine()) != null)
                 {
                     string[] rowData = line.Split(", ");
-                    for (int i = 0; i < rowData.Length; i++)
-                    {
-
-                        dataGridView.Rows[row].Cells[i].Value = rowData[i];
-                    }
-
-                    row++;
+                    dataGridView.Rows.Add(rowData);
+                    
                 }
             }
         }
